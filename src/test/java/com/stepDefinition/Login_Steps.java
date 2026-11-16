@@ -4,7 +4,6 @@ import com.baseclass.BaseClass;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
@@ -13,18 +12,14 @@ public class Login_Steps extends BaseClass {
 
     @When("the user enters a valid username")
     public void the_user_enters_a_valid_username() {
-
         launchBrowser("chrome");
         launch_Url("https://adactinhotelapp.com/");
-
-        WebElement username = driver.findElement(By.xpath("//input[@id='username']"));
-        username.sendKeys("masif1118");
+        enterText(By.xpath("//input[@id='username']"),"masif1118");
 
     }
     @When("the user enters a valid password")
     public void the_user_enters_a_valid_password() {
-        WebElement password = driver.findElement(By.id("password"));
-        password.sendKeys("EMBMEO");
+        enterText(By.xpath("//input[@id='password']"),"EMBMEO");
 
     }
     @When("the user clicks the Login button")
